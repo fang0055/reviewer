@@ -1,0 +1,206 @@
+html{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:hsla(80deg, 0%, 97%, 1);
+    overflow: hidden;
+    color: hsla(80deg, 0%, 24%, 1);
+}
+body{
+    margin: 0;
+}
+header{
+    width: 100vw;
+    position: fixed;
+    top:0;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    background-color:hsla(80deg, 0%, 98%, 1);
+    box-shadow: 1px 1px 25px hsla(80deg, 0%, 0%, 0.15);
+}
+
+h1{
+    margin: 0 auto;
+    padding: 0.75rem;
+    font-size: 1.5rem;
+    color:rgb(158, 180, 111);
+}
+
+footer{
+    background-color:hsla(80deg, 0%, 98%, 1);
+    box-shadow: 1px 1px 25px hsla(80deg, 0%, 0%, 0.1);
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+}
+
+.footBtn{
+    padding: 0rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin: 0 auto;
+}
+
+.footBtn > h2{
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 1rem;
+    color:rgb(158, 180, 111);
+}
+
+.page{
+    opacity: 0;
+    transform: scale(0.001);
+    transition: all 0.55s ease-in-out;
+}
+
+.disapear{
+    display: none;
+}
+
+.show{
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.55s ease-in-out;
+}
+
+
+
+/********** HOME PAGE **********/
+
+
+
+.imgContainer{
+    position: relative;
+    overflow: hidden;
+    margin: 4rem auto;
+    width: 92vw;
+    height: 20vw;
+    border-radius: 4px;
+}
+
+.list{
+    position: relative;
+}
+
+.overlay{
+    position: absolute;
+    bottom: -1rem;
+    right: 0rem;
+    height: 250px;
+    width: 2800px;
+    background:hsla(80deg, 0%, 0%, 0.6);
+}
+
+img{
+    width: 100%;
+}
+
+.list > h2{
+    position: absolute;
+    bottom: -0.25rem;
+    right: 8.5vw;
+    font-size: 1.15rem;
+    color: white;
+}
+
+
+
+/********** DETAILS PAGE **********/
+
+
+
+.details{
+    position: relative;
+    top:-8.5rem;
+    overflow: hidden;
+    margin: 0rem auto;
+    width: 92vw;
+    border-radius: 4px;
+}
+
+.deleteBtn{
+    width: 5rem;
+    background-color: rgb(161, 70, 58);
+    border: 0px solid hsla(80deg, 0%, 0%, 0);
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    color: white;
+}
+
+
+
+
+
+/********** ADD PAGE **********/
+
+.addPage{
+    position: relative;
+    top:-26.5rem;
+    overflow: hidden;
+    margin: 0rem auto;
+    width: 92vw;
+    border-radius: 4px;
+}
+
+.addBtn{
+    border-radius: 50px;
+    border: 0px solid hsla(80deg, 0%, 0%, 0);
+    padding: 0.35rem;
+    height: 3rem;
+    width: 3rem;
+    font-size: 2rem;
+    color: white;
+    background-color: rgb(158, 180, 111);
+    position: fixed;
+    right: 7vw;
+    bottom: 9vh;
+    box-shadow: 1px 1px 25px hsla(80deg, 0%, 0%, 0.15);
+}
+
+.addBtn:focus{
+    outline: none;
+}
+
+.inputText{
+    font-size: 1rem;
+    color: hsla(80deg, 0%, 20%, 0.6);
+    background-color: hsla(80deg, 0%, 20%, 0);
+    padding-bottom: 0.1rem;
+    outline: none;
+    border: 0 solid hsla(80deg, 0%, 0%, 0);
+    border-bottom: 1.5px solid hsla(80deg, 0%, 20%, 0.2);
+    width: 92vw;
+    transition: all 0.5s ease-in-out;
+}
+
+.inputText:focus{
+    color: hsla(80deg, 0%, 24%, 1);
+    transition: all 0.5s ease-in-out;
+    border-bottom: 1.5px solid rgb(158, 180, 111);
+}
+
+.saveBtn,
+.cancelBtn{
+    outline: none;
+    width: 5rem;
+    background-color: rgb(158, 180, 111);
+    border: 0px solid hsla(80deg, 0%, 0%, 0);
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    color: white;
+}
+
+.cancelBtn{
+    background-color: hsla(80deg, 0%, 55%, 1);
+}
+
+.CSBtn{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
