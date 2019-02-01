@@ -12,6 +12,9 @@
     },
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "ca.edumedia.fang0055.project1"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "ca.edumedia.fang0055.project1"
     }
   },
   "dependent_plugins": {}

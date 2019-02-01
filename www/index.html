@@ -11,48 +11,73 @@
     <header id="topTitle">
         <h1>REVIEWER</h1>
     </header>
+
     <div class="page homePage show">
-        <div class="list">
-            <div class="imgContainer">
-                <img src="img/1.jpg" alt="1st item">
-                <p class="overlay"> </p>
-            </div>
-            <h2>Beautiful Flower</h2>
+        <div class="remind remindDisapear">
+            <p>Hi! You don't have any items now :(</p>
+            <p>Press the "<span class="plusSign">+</span>" button to add some ;)</p>
         </div>
     </div> 
 
-
     <div class="page detailsPage">
         <div class="details">
-            <img src="img/1.jpg" alt="1st detail">
+            <div class="imgAdd">
+                <img class="imgDetail" src="img/1.jpg" alt="Item's image">
+            </div>
             <h3 class="itemTitle">Beautiful Flower</h3>
-            <button class="deleteBtn">Delete</button>
+            <div class="starsContainer" data-rating="0">
+                <span class="starD">&nbsp;</span>
+                <span class="starD">&nbsp;</span>
+                <span class="starD">&nbsp;</span>
+                <span class="starD">&nbsp;</span>
+                <span class="starD">&nbsp;</span>
+            </div>
         </div>
 
+        <div class="details">
+            <button class="deleteBtn">Delete</button>
+        </div>
     </div>
 
     <div class="page addPage">
-        <img src="img/1.jpg" alt="1st detail">
-        <div class="titleContainer">
-            <h3 class="itemTitle">Title</h3>
-            <input type="text" class="inputText">
-        </div>
-        
-        <div class="CSBtn">
-            <button class="cancelBtn">Cancel</button>
-            <button class="saveBtn">Save</button>
-        </div>
+        <div class="addDetails">
+            <div class="imgAdd">
+                <img class="newPic" src="img/1.jpg" alt="1st detail">
+            </div>
 
+            <div class="titleContainer">
+                <h3 class="itemTitle">Title</h3>
+                <input type="text" class="inputText">
+            </div>
+
+            <div class="stars" data-rating="1">
+                <h3 class="itemRating">Rating</h3>
+                <span class="star">&nbsp;</span>
+                <span class="star">&nbsp;</span>
+                <span class="star">&nbsp;</span>
+                <span class="star">&nbsp;</span>
+                <span class="star">&nbsp;</span>
+            </div>
+
+            <div class="CSBtn">
+                <button class="cancelBtn">Cancel</button>
+                <button class="saveBtn">Save</button>
+            </div>
+        </div>
     </div>
+
     <button class="addBtn">+</button>
 
-    <script src="js/main.js"></script>
-</body>
-
-<footer>
+    <footer>
         <div class="footBtn">
             <h2 class="pageBtn disapear backBtn">Back</h2>
             <h2 class="pageBtn" id="locationName">Home</h2>
         </div>
     </footer>
+
+    <script src="cordova.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
 </html>

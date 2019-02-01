@@ -5,21 +5,23 @@ html{
     overflow: hidden;
     color: hsla(80deg, 0%, 24%, 1);
 }
+
 body{
     margin: 0;
 }
+
 header{
+    z-index: 900;
     width: 100vw;
     position: fixed;
-    top:0;
+    /* top:0; */
     display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
     background-color:hsla(80deg, 0%, 98%, 1);
     box-shadow: 1px 1px 25px hsla(80deg, 0%, 0%, 0.15);
+    transform: translateZ(0); /* in case of shaking problem caused by "position:fixed", refered here: https://www.cnblogs.com/Arlar/p/5660368.html */
 }
 
-h1{
+#topTitle > h1{
     margin: 0 auto;
     padding: 0.75rem;
     font-size: 1.5rem;
@@ -27,12 +29,14 @@ h1{
 }
 
 footer{
+    z-index: 900;
     background-color:hsla(80deg, 0%, 98%, 1);
     box-shadow: 1px 1px 25px hsla(80deg, 0%, 0%, 0.1);
     width: 100vw;
     position: fixed;
     display: flex;
     bottom: 0;
+    transform: translateZ(0); /* in case of shaking problem caused by "position:fixed", refered here: https://www.cnblogs.com/Arlar/p/5660368.html */
 }
 
 .footBtn{
@@ -51,10 +55,20 @@ footer{
     color:rgb(158, 180, 111);
 }
 
+.backBtn:active{
+        transform: scale(0.95);
+        transition: all 0.15s linear;
+}
+
 .page{
+    position: absolute;
     opacity: 0;
     transform: scale(0.001);
-    transition: all 0.55s ease-in-out;
+    transition: all 0.35s ease-in-out;
+    margin-top: 4.5rem;
+    padding-bottom: 3.5rem;
+    left: 0rem;
+    right: 0rem;
 }
 
 .disapear{
@@ -65,19 +79,21 @@ footer{
     display: block;
     opacity: 1;
     transform: scale(1);
-    transition: all 0.55s ease-in-out;
+    transition: all 0.35s ease-in-out;
 }
 
 
 
 /********** HOME PAGE **********/
 
-
-
-.imgContainer{
+.imgContainer,
+.imgAdd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     overflow: hidden;
-    margin: 4rem auto;
+    margin: 0rem auto;
     width: 92vw;
     height: 20vw;
     border-radius: 4px;
@@ -85,6 +101,17 @@ footer{
 
 .list{
     position: relative;
+    margin-bottom: 1rem;
+}
+
+.list:active{
+    transform: scale(0.95);
+    transition: all 0.15s linear;
+}
+
+.imgContainer:active{
+    transform: scale(0.95);
+    transition: all 0.15s linear;
 }
 
 .overlay{
@@ -100,6 +127,20 @@ img{
     width: 100%;
 }
 
+.remind{
+    color: hsla(80deg, 0%, 75%, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8rem auto;
+    width: 80vw;
+}
+
+.plusSign{
+    color: rgb(158, 180, 111);
+    font-weight: 600;
+}
+
 .list > h2{
     position: absolute;
     bottom: -0.25rem;
@@ -112,15 +153,26 @@ img{
 
 /********** DETAILS PAGE **********/
 
-
-
 .details{
     position: relative;
-    top:-8.5rem;
     overflow: hidden;
     margin: 0rem auto;
     width: 92vw;
     border-radius: 4px;
+}
+
+.itemTitle{
+    margin-top: 2.25rem;
+}
+
+/* .dtlImgCtn{
+    width: 60vw;
+    height: 50vh;
+    border-radius: 4px;
+} */
+
+.starsContainer{
+    margin-bottom: 1.75rem;
 }
 
 .deleteBtn{
@@ -129,20 +181,24 @@ img{
     border: 0px solid hsla(80deg, 0%, 0%, 0);
     border-radius: 4px;
     padding: 0.5rem 0.75rem;
+    margin-bottom: 1.5rem;
     color: white;
 }
 
-
+.deleteBtn:active{
+    transform: scale(0.9);
+    transition: all 0.15 linear;
+}
 
 
 
 /********** ADD PAGE **********/
 
-.addPage{
+.addDetails{
     position: relative;
-    top:-26.5rem;
     overflow: hidden;
     margin: 0rem auto;
+    padding-bottom: 1rem;
     width: 92vw;
     border-radius: 4px;
 }
@@ -158,31 +214,78 @@ img{
     background-color: rgb(158, 180, 111);
     position: fixed;
     right: 7vw;
-    bottom: 9vh;
+    bottom: 10vh;
     box-shadow: 1px 1px 25px hsla(80deg, 0%, 0%, 0.15);
+    transform: translateZ(0); /* in case of shaking problem caused by "position:fixed", refered here: https://www.cnblogs.com/Arlar/p/5660368.html */
 }
 
 .addBtn:focus{
     outline: none;
 }
 
+.addBtn:active{
+    outline: none;
+    transform: scale(0.9);
+    transition: all 0.15s linear;
+}
+
+.imgAdd{
+    width: 92vw;
+    height: auto;
+    border-radius: 4px;
+}
+
 .inputText{
     font-size: 1rem;
     color: hsla(80deg, 0%, 20%, 0.6);
     background-color: hsla(80deg, 0%, 20%, 0);
-    padding-bottom: 0.1rem;
+    padding-bottom: 0.2rem;
     outline: none;
     border: 0 solid hsla(80deg, 0%, 0%, 0);
     border-bottom: 1.5px solid hsla(80deg, 0%, 20%, 0.2);
     width: 92vw;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.75s ease-in-out;
 }
 
 .inputText:focus{
     color: hsla(80deg, 0%, 24%, 1);
-    transition: all 0.5s ease-in-out;
+    transition: all 0.75s ease-in-out;
     border-bottom: 1.5px solid rgb(158, 180, 111);
 }
+
+.itemRating{
+    margin-top: 2.5rem;
+}
+
+.star,
+.starD{
+    color: rgb(158, 180, 111);
+    font-size: 2.0rem;
+    padding: 0 1rem 0 0;
+  }
+
+.star::before,
+.starD::before{
+    content: '\2606';  
+    cursor: pointer;
+  }
+
+.star.rated::before,
+.starD.rated::before{
+    content: '\2605'; 
+  }
+
+.stars,
+.starsContainer{
+      counter-reset: rateme 0;   
+      font-size: 1.0rem;
+      font-weight: 600;
+  }
+
+.star.rated,
+.starD.rated{
+      counter-increment: rateme 1;
+  }
 
 .saveBtn,
 .cancelBtn{
@@ -195,12 +298,28 @@ img{
     color: white;
 }
 
+.saveBtn:active{
+    outline: none;
+    transform: scale(0.9);
+    transition: all 0.15s linear;
+}
+
 .cancelBtn{
     background-color: hsla(80deg, 0%, 55%, 1);
+}
+
+.cancelBtn:active{
+    outline: none;
+    transform: scale(0.9);
+    transition: all 0.15s linear;
 }
 
 .CSBtn{
     margin-top: 3rem;
     display: flex;
     justify-content: space-between;
+}
+
+.remindDisapear{
+    display: none;
 }
