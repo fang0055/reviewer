@@ -1,6 +1,3 @@
-// let leftCoor = document.querySelector(".CSBtn").offsetLeft;
-// let topCoor = document.querySelector(".CSBtn").offsetTop;
-
 if (document.deviceready) {
     document.addEventListener("deviceready", init);
 } else {
@@ -16,15 +13,11 @@ let rating = 0;
 let itemId = null;
 
 function init(){
-
-    // console.log(leftCoor + " and " + topCoor);
-
     if (localStorage.getItem(appDataKey)){
         checkLocal();
     } else{
         document.querySelector(".remind").classList.remove("remindDisapear");
     }
-
     document.querySelector(".backBtn").addEventListener("click", goBack);
     document.querySelector(".addBtn").addEventListener("click", takePhoto);
     document.querySelector(".cancelBtn").addEventListener("click", goBack);
@@ -150,6 +143,7 @@ function takePhoto(){
     document.querySelector(".newPic").src = imgURI;
     imageLocation = imgURI;
     addNew();
+    // scrollALittle();
     }
 
     function soBad(msg){
@@ -157,13 +151,19 @@ function takePhoto(){
     }
 }
 
+// function scrollALittle(){
+    // let leftCoor = document.querySelector(".CSBtn").offsetLeft;
+    // let topCoor = document.querySelector(".CSBtn").offsetTop + document.querySelector(".addPage").offsetTop;
+    // console.log(leftCoor + " and " + topCoor);
+//     window.scrollBy(0, 300);
+// }
+
 function prepareStars(){
     let stars = document.querySelectorAll(".star");
     stars.forEach(function(star){
         star.classList.remove("rated");
         star.addEventListener("click", setRating);
     });
- 
 }
 
 function setRating(ev){
